@@ -1,0 +1,13 @@
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        d={}
+        for i in s:
+            if i not in d:
+                d[i]=1
+            else:
+                d[i]+=1
+        sorted_ele=sorted(d.items(),key=lambda x:x[1],reverse=True)
+        new_string=""
+        for i in sorted_ele:
+            new_string+=i[0]*i[1]
+        return new_string
